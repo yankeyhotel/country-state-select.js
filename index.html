@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Country/State Select Demo</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="country-state-select.js"></script>
 </head>
 <body>
@@ -18,8 +19,7 @@
         <select id="country2" name="country2"></select>
         <br />
         <script language="javascript">
-            populateCountries("country", "state");
-            populateCountries("country2");
+            $("#country").populateCountries("state");
         </script>
     </div>
 </body>
