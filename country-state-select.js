@@ -1,5 +1,513 @@
 // Countries
-var country_arr = new Array("Afghanistan", "Albania", "Algeria", "American Samoa", "Angola", "Anguilla", "Antartica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Island", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Clipperton Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo, Democratic Republic of the", "Congo, Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czeck Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Europa Island", "Falkland Islands (Islas Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern and Antarctic Lands", "Gabon", "Gambia, The", "Gaza Strip", "Georgia", "Germany", "Ghana", "Gibraltar", "Glorioso Islands", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City)", "Honduras", "Hong Kong", "Howland Island", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Ireland, Northern", "Israel", "Italy", "Jamaica", "Jan Mayen", "Japan", "Jarvis Island", "Jersey", "Johnston Atoll", "Jordan", "Juan de Nova Island", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Man, Isle of", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Midway Islands", "Moldova", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcaim Islands", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romainia", "Russia", "Rwanda", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Scotland", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and South Sandwich Islands", "Spain", "Spratly Islands", "Sri Lanka", "Sudan", "Suriname", "Svalbard", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tobago", "Toga", "Tokelau", "Tonga", "Trinidad", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "USA", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands", "Wales", "Wallis and Futuna", "West Bank", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
+var country_arr = [ "Afghanistan", "Albania", "Algeria",
+    "American Samoa",
+    "Angola",
+    "Anguilla",
+    "Antartica",
+    "Antigua and Barbuda",
+    "Argentina",
+    "Armenia",
+    "Aruba",
+    "Ashmore and Cartier Island",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",        // B
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bermuda",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "British Virgin Islands",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burma",
+    "Burundi",
+    "Cambodia",         // C
+    "Cameroon",
+    "Canada",
+    "Cape Verde",
+    "Cayman Islands",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Christmas Island",
+    "Clipperton Island",
+    "Cocos (Keeling) Islands",
+    "Colombia",
+    "Comoros",
+    "Congo, Democratic Republic of the",
+    "Congo, Republic of the",
+    "Cook Islands",
+    "Costa Rica",
+    "Cote d'Ivoire",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czeck Republic",
+    "Denmark",          // D
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",          // E
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Ethiopia",
+    "Europa Island",
+    "Falkland Islands (Islas Malvinas)",       // F
+    "Faroe Islands",
+    "Fiji",
+    "Finland",
+    "France",
+    "French Guiana",
+    "French Polynesia",
+    "French Southern and Antarctic Lands",
+    "Gabon",            // G
+    "Gambia, The",
+    "Gaza Strip",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Gibraltar",
+    "Glorioso Islands",
+    "Greece",
+    "Greenland",
+    "Grenada",
+    "Guadeloupe",
+    "Guam",
+    "Guatemala",
+    "Guernsey",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",            // H
+    "Heard Island and McDonald Islands",
+    "Holy See (Vatican City)",
+    "Honduras",
+    "Hong Kong",
+    "Howland Island",
+    "Hungary",
+    "Iceland",          // I
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Ireland, Northern",
+    "Israel",
+    "Italy",
+    "Jamaica",          // J
+    "Jan Mayen",
+    "Japan",
+    "Jarvis Island",
+    "Jersey",
+    "Johnston Atoll",
+    "Jordan",
+    "Juan de Nova Island",
+    "Kazakhstan",       // K
+    "Kenya",
+    "Kiribati",
+    "Korea, North",
+    "Korea, South",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",             // L
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Macau",            // M
+    "Macedonia, Former Yugoslav Republic of",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Man, Isle of",
+    "Marshall Islands",
+    "Martinique",
+    "Mauritania",
+    "Mauritius",
+    "Mayotte",
+    "Mexico",
+    "Micronesia, Federated States of",
+    "Midway Islands",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montserrat",
+    "Morocco",
+    "Mozambique",
+    "Namibia",          // N
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "Netherlands Antilles",
+    "New Caledonia",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "Niue",
+    "Norfolk Island",
+    "Northern Mariana Islands",
+    "Norway",
+    "Oman",             // O
+    "Pakistan",         // P
+    "Palau",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Pitcaim Islands",
+    "Poland",
+    "Portugal",
+    "Puerto Rico",
+    "Qatar",            // Q
+    "Reunion",          // R
+    "Romainia",
+    "Russia",
+    "Rwanda",
+    "Saint Helena",     // S
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Pierre and Miquelon",
+    "Saint Vincent and the Grenadines",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Scotland",
+    "Senegal",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Georgia and South Sandwich Islands",
+    "Spain",
+    "Spratly Islands",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Svalbard",
+    "Swaziland",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",           // T
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Tobago",
+    "Toga",
+    "Tokelau",
+    "Tonga",
+    "Trinidad",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Tuvalu",
+    "Uganda",           // U
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "Uruguay",
+    "USA",
+    "Uzbekistan",
+    "Vanuatu",          // V
+    "Venezuela",
+    "Vietnam",
+    "Virgin Islands",
+    "Wales",            // W
+    "Wallis and Futuna",
+    "West Bank",
+    "Western Sahara",
+    "Yemen",            // Y
+    "Yugoslavia",
+    "Zambia",           // Z
+    "Zimbabwe"
+];
+
+// Countries Codes
+// States
+var cc_a = [];
+// A
+cc_a[0] = "AF";     // Afghanistan
+cc_a[1] = "AL";     // Albania
+cc_a[2] = "DZ";     // Algeria
+cc_a[3] = "AS";     // America Somoa
+cc_a[4] = "AO";     // Angola
+cc_a[5] = "AI";     // Anguilla
+cc_a[6] = "AQ";
+cc_a[7] = "AG";
+cc_a[8] = "AR";
+cc_a[9] = "AM";
+cc_a[10] = "AW";
+cc_a[11] = "";
+cc_a[12] = "AU";
+cc_a[13] = "AT";
+cc_a[14] = "AZ";
+// B
+cc_a[15] = "BS";
+cc_a[16] = "BH";
+cc_a[17] = "BD";
+cc_a[18] = "BB";
+cc_a[19] = "BY";
+cc_a[20] = "BE";
+cc_a[21] = "BZ";
+cc_a[22] = "BJ";
+cc_a[23] = "BM";
+cc_a[24] = "BT";
+cc_a[25] = "BO";
+cc_a[26] = "BA";
+cc_a[27] = "BW";
+cc_a[28] = "BR";
+cc_a[29] = "";
+cc_a[30] = "BN";
+cc_a[31] = "BG";
+cc_a[32] = "BF";
+cc_a[33] = "";
+cc_a[34] = "BI";
+// C
+cc_a[35] = "";
+cc_a[36] = "";
+cc_a[37] = "";
+cc_a[38] = "";
+cc_a[39] = "";
+cc_a[40] = "";
+cc_a[41] = "";
+cc_a[42] = "";
+cc_a[43] = "";
+cc_a[44] = "";
+cc_a[45] = "";
+cc_a[46] = "";
+cc_a[47] = "";
+cc_a[48] = "";
+cc_a[49] = "";
+cc_a[50] = "";
+cc_a[51] = "";
+cc_a[52] = "";
+cc_a[53] = "";
+cc_a[54] = "";
+cc_a[55] = "";
+cc_a[56] = "";
+cc_a[57] = "";
+cc_a[58] = "";
+cc_a[59] = "";
+cc_a[60] = "";
+cc_a[61] = "";
+cc_a[62] = "";
+cc_a[63] = "";
+cc_a[64] = "";
+cc_a[65] = "";
+cc_a[66] = "";
+cc_a[67] = "";
+cc_a[68] = "";
+cc_a[69] = "";
+cc_a[70] = "";
+cc_a[71] = "";
+cc_a[72] = "";
+cc_a[73] = "";
+cc_a[74] = "";
+cc_a[75] = "";
+cc_a[76] = "";
+cc_a[77] = "";
+cc_a[78] = "";
+cc_a[79] = "";
+cc_a[80] = "";
+cc_a[81] = "";
+cc_a[82] = "";
+cc_a[83] = "";
+cc_a[84] = "";
+cc_a[85] = "";
+cc_a[86] = "";
+cc_a[87] = "";
+cc_a[88] = "";
+cc_a[89] = "";
+cc_a[90] = "";
+cc_a[91] = "";
+cc_a[92] = "";
+cc_a[93] = "";
+cc_a[94] = "";
+cc_a[95] = "";
+cc_a[96] = "";
+cc_a[97] = "";
+cc_a[98] = "";
+cc_a[99] = "";
+cc_a[100] = "";
+cc_a[101] = "";
+cc_a[102] = "";
+cc_a[103] = "";
+cc_a[104] = "";
+cc_a[105] = "";
+cc_a[106] = "";
+cc_a[107] = "";
+cc_a[108] = "";
+cc_a[109] = "";
+cc_a[110] = "";
+cc_a[111] = "";
+cc_a[112] = "";
+cc_a[113] = "";
+cc_a[114] = "";
+cc_a[115] = "";
+cc_a[116] = "";
+cc_a[117] = "";
+cc_a[118] = "";
+cc_a[119] = "";
+cc_a[120] = "";
+cc_a[121] = "";
+cc_a[122] = "";
+cc_a[123] = "";
+cc_a[124] = "";
+cc_a[125] = "";
+cc_a[127] = "";
+cc_a[128] = "";
+cc_a[129] = "";
+cc_a[130] = "";
+cc_a[131] = "";
+cc_a[132] = "";
+cc_a[133] = "";
+cc_a[134] = "";
+cc_a[135] = "";
+cc_a[136] = "";
+cc_a[137] = "";
+cc_a[138] = "";
+cc_a[139] = "";
+cc_a[140] = "";
+cc_a[142] = "";
+cc_a[143] = "";
+cc_a[144] = "";
+cc_a[145] = "";
+cc_a[146] = "";
+cc_a[147] = "";
+cc_a[148] = "";
+cc_a[149] = "";
+cc_a[150] = "";
+cc_a[151] = "";
+cc_a[152] = "";
+cc_a[153] = "";
+cc_a[154] = "";
+cc_a[155] = "";
+cc_a[156] = "";
+cc_a[157] = "";
+cc_a[158] = "";
+cc_a[159] = "";
+cc_a[160] = "";
+cc_a[161] = "";
+cc_a[162] = "";
+cc_a[163] = "";
+cc_a[164] = "";
+cc_a[165] = "";
+cc_a[166] = "";
+cc_a[167] = "";
+cc_a[168] = "";
+cc_a[169] = "";
+cc_a[170] = "";
+cc_a[171] = "";
+cc_a[172] = "";
+cc_a[173] = "";
+cc_a[174] = "";
+cc_a[175] = "";
+cc_a[176] = "";
+cc_a[177] = "";
+cc_a[178] = "";
+cc_a[179] = "";
+cc_a[180] = "";
+cc_a[181] = "";
+cc_a[182] = "";
+cc_a[183] = "";
+cc_a[184] = "";
+cc_a[185] = "";
+cc_a[186] = "";
+cc_a[187] = "";
+cc_a[188] = "";
+cc_a[189] = "";
+cc_a[190] = "";
+cc_a[191] = "";
+cc_a[192] = "";
+cc_a[193] = "";
+cc_a[194] = "";
+cc_a[195] = "";
+cc_a[196] = "";
+cc_a[197] = "";
+cc_a[198] = "";
+cc_a[199] = "";
+cc_a[200] = "";
+cc_a[201] = "";
+cc_a[202] = "";
+cc_a[203] = "";
+cc_a[204] = "";
+cc_a[205] = "";
+cc_a[206] = "";
+cc_a[207] = "";
+cc_a[208] = "";
+cc_a[209] = "";
+cc_a[210] = "";
+cc_a[211] = "";
+cc_a[212] = "";
+cc_a[213] = "";
+cc_a[214] = "";
+cc_a[215] = "";
+cc_a[216] = "";
+cc_a[217] = "";
+cc_a[218] = "";
+cc_a[219] = "";
+cc_a[220] = "";
+cc_a[221] = "";
+cc_a[222] = "";
+cc_a[223] = "";
+cc_a[224] = "";
+cc_a[225] = "";
+cc_a[226] = "";
+cc_a[227] = "";
+cc_a[228] = "";
+cc_a[229] = "";
+cc_a[230] = "";
+cc_a[231] = "";
+cc_a[232] = "";
+cc_a[233] = "";
+cc_a[234] = "";
+cc_a[235] = "";
+cc_a[236] = "";
+cc_a[237] = "";
+cc_a[238] = "";
+cc_a[239] = "";
+cc_a[240] = "";
+cc_a[241] = "";
+cc_a[242] = "";
+cc_a[243] = "";
+cc_a[244] = "";
+cc_a[245] = "";
+cc_a[246] = "";
+cc_a[247] = "";
+cc_a[248] = "";
+cc_a[249] = "";
+cc_a[250] = "";
+cc_a[251] = "";
+cc_a[252] = "";
  
 // States
 var s_a = new Array();
